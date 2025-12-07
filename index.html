@@ -17,6 +17,8 @@
             --accent: #f59e0b; /* Amber/Gold for Calls */
             --light: #f8fafc;
             --dark: #1e293b;
+            --danger: #dc2626; /* Red for notices */
+            --danger-bg: #fee2e2;
         }
 
         * {
@@ -138,7 +140,7 @@
         .section-title {
             text-align: center;
             font-size: 2rem;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
             color: var(--primary);
         }
 
@@ -146,6 +148,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
 
         .price-card {
@@ -193,6 +196,28 @@
         .portfolio {
             padding: 80px 0;
             background-color: var(--light);
+        }
+
+        /* Notice Box Style */
+        .notice-box {
+            background-color: var(--danger-bg);
+            color: var(--danger);
+            border: 1px solid var(--danger);
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 2px 5px rgba(220, 38, 38, 0.1);
+        }
+        
+        .notice-box i {
+            font-size: 1.2rem;
         }
 
         .portfolio-grid {
@@ -325,6 +350,11 @@
             .hero-content h1 { font-size: 2rem; }
             .mobile-cta { display: block; } /* Show sticky bar on mobile */
             .portfolio-grid { grid-template-columns: 1fr; }
+            
+            .notice-box {
+                flex-direction: column;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -399,6 +429,14 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <h2 class="section-title">My Ongoing Projects</h2>
+
+            <!-- NEW RED NOTICE ADDED HERE -->
+            <div class="notice-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Please Note: The websites listed below are currently under active development and are not yet fully completed.</span>
+            </div>
+            <!-- END NOTICE -->
+
             <div class="portfolio-grid">
 
                 <!-- Project 1 -->
