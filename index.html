@@ -1,205 +1,555 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sahan Colombage — Web Developer | Build, Launch, Grow</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <meta name="description" content="Professional web development by Sahan Dilshan Colombage — Single-page websites, small businesses, portfolio sites. Price from LKR 5,000. Contact: 070 315 0742" />
-  <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.03);font-family:Inter,system-ui,Arial,Segoe UI,sans-serif}
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#071025 0%, #071c2b 100%);color:#e6eef6;line-height:1.45}
-    .container{max-width:1100px;margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0ea5a3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#021322}
-    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600}
-    .hero{display:grid;grid-template-columns:1fr 370px;gap:28px;align-items:center;margin-top:18px}
-    .hero-card{background:var(--glass);padding:28px;border-radius:16px;backdrop-filter: blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
-    h1{font-size:28px;margin:0 0 8px}
-    p.lead{color:var(--muted);margin:0 0 16px}
-    .ctas{display:flex;gap:12px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#0891b2);color:#031016}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-    .price{font-size:22px;font-weight:800;color:var(--accent)}
-    .features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
-    .feature{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
-    .portfolio{margin-top:28px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .card{background:var(--card);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-    .card a{color:inherit;text-decoration:none}
-    .card .title{font-weight:700;margin:8px 0 4px}
-    footer{margin-top:36px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:700}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .faq{margin-top:18px}
-    @media (max-width:880px){.hero{grid-template-columns:1fr;}.grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}}
-    @media (max-width:520px){.grid{grid-template-columns:1fr}.brand span{display:none}.logo{width:44px;height:44px}}
-    /* sticky call button */
-    .floating{position:fixed;right:18px;bottom:18px;border-radius:999px;box-shadow:0 10px 30px rgba(2,6,23,0.5);z-index:40}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahan Dilshan Colombage - Professional Web Development</title>
+    <meta name="description" content="Affordable web development in Sri Lanka. Full websites for Rs. 5,000.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0f172a; /* Dark Navy */
+            --secondary: #3b82f6; /* Bright Blue */
+            --accent: #f59e0b; /* Amber/Gold for Calls */
+            --light: #f8fafc;
+            --dark: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            padding-bottom: 60px; /* Space for mobile sticky bar */
+        }
+
+        a { text-decoration: none; }
+
+        /* --- Header --- */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            color: var(--dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--secondary); }
+
+        .btn-call-nav {
+            background-color: var(--primary);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content span {
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            background-color: #fbbf24;
+        }
+
+        /* --- Pricing Section --- */
+        .pricing {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: 0.3s;
+            background: var(--light);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--secondary);
+            background: white;
+            position: relative;
+        }
+
+        .badge {
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .price small { font-size: 1rem; color: #64748b; font-weight: 400;}
+
+        /* --- Portfolio Section --- */
+        .portfolio {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-preview {
+            height: 150px;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .project-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-visit {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* --- Contact Section --- */
+        .contact {
+            padding: 80px 0;
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-info h2 { font-size: 2rem; margin-bottom: 20px; }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 15px;
+            width: 30px;
+        }
+
+        .map-box {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        /* --- Mobile Sticky Bar --- */
+        .mobile-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--accent);
+            padding: 15px;
+            text-align: center;
+            z-index: 2000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            display: none; /* Hidden on desktop by default */
+        }
+
+        .mobile-cta a {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0f172a;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Simplified nav for mobile */
+            .contact-container { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2rem; }
+            .mobile-cta { display: block; } /* Show sticky bar on mobile */
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+
+    <!-- Navigation -->
     <header>
-      <div class="brand">
-        <div class="logo">SD</div>
-        <div>
-          <div style="font-weight:800">Sahan Colombage</div>
-          <div style="font-size:13px;color:var(--muted)">Web developer — Homagama, Sri Lanka</div>
+        <div class="container">
+            <nav>
+                <div class="logo">Sahan Colombage</div>
+                <div class="nav-links">
+                    <a href="#pricing">Pricing</a>
+                    <a href="#portfolio">Projects</a>
+                    <a href="#contact">Contact</a>
+                    <a href="tel:0703150742" class="btn-call-nav"><i class="fas fa-phone-alt"></i> 070 315 0742</a>
+                </div>
+            </nav>
         </div>
-      </div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-card">
-        <h1>Professional single-page websites that get you customers</h1>
-        <p class="lead">I build fast, responsive websites for small businesses, contractors, shops and portfolios. Clear prices — reliable delivery — phone & WhatsApp support.</p>
-        <div class="ctas">
-          <a class="btn btn-primary" href="tel:0703150742">📞 Call: 070 315 0742</a>
-          <a class="btn btn-ghost" href="https://wa.me/94703150742" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <div class="container hero-content">
+            <h1>Complete Website Development<br>For Only <span>Rs. 5,000</span></h1>
+            <p>I build professional, mobile-responsive websites to help your business grow. High quality work at an unbeatable price.</p>
+            <a href="tel:0703150742" class="btn-main"><i class="fas fa-phone-volume"></i> CALL NOW</a>
         </div>
-
-        <div style="display:flex;gap:12px;margin-top:16px;align-items:center">
-          <div>
-            <div class="price">LKR 5,000</div>
-            <div style="color:var(--muted);font-weight:600;font-size:13px">Full website — one page (HTML/CSS/JS)</div>
-          </div>
-          <div style="margin-left:auto;text-align:right;color:var(--muted);font-size:13px">
-            <div>Domains: LKR 3,700–5,000 / year</div>
-            <div>Hosting: LKR 350 / month</div>
-          </div>
-        </div>
-
-        <div class="features">
-          <div class="feature">✅ Responsive for mobile & desktop</div>
-          <div class="feature">✅ WhatsApp & phone call CTA</div>
-          <div class="feature">✅ Portfolio & reviews section</div>
-          <div class="feature">✅ Fast delivery & support</div>
-        </div>
-      </div>
-
-      <aside style="padding:18px 0">
-        <div style="background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px">
-          <div style="font-weight:800">Quick quote</div>
-          <div style="color:var(--muted);font-size:13px;margin-top:8px">Tell me what you need and I will call or message you to confirm.</div>
-
-          <form id="quoteForm" style="margin-top:12px;display:grid;gap:8px">
-            <input id="name" required placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-            <input id="phone" required placeholder="Phone or WhatsApp" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-            <textarea id="message" placeholder="Short message (e.g. I need a website for my shop)" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;resize:vertical"></textarea>
-            <button type="submit" class="btn btn-primary">Send via WhatsApp</button>
-          </form>
-        </div>
-
-        <div style="margin-top:12px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px">
-          <div style="font-weight:700">Address</div>
-          <div style="color:var(--muted);font-size:13px">110, Ranala Road, Habarakada, Homagama</div>
-          <div style="margin-top:8px">📞 <a href="tel:0703150742" style="color:inherit;text-decoration:none">070 315 0742</a></div>
-        </div>
-      </aside>
     </section>
 
-    <section id="services" style="margin-top:26px">
-      <h2 style="margin:0 0 10px">Services</h2>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-        <div class="card"><div style="font-weight:700">Landing & Business Sites</div><div style="color:var(--muted);font-size:13px;margin-top:6px">One-page sites, contact & WhatsApp CTAs</div></div>
-        <div class="card"><div style="font-weight:700">Portfolio Sites</div><div style="color:var(--muted);font-size:13px;margin-top:6px">Showcase your work, easy updates</div></div>
-        <div class="card"><div style="font-weight:700">Shopfront & WhatsApp Orders</div><div style="color:var(--muted);font-size:13px;margin-top:6px">Simple catalog + WhatsApp checkout</div></div>
-      </div>
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Transparent Pricing</h2>
+            <div class="pricing-grid">
+                
+                <!-- Development Cost -->
+                <div class="price-card featured">
+                    <span class="badge">BEST VALUE</span>
+                    <h3>Development Fee</h3>
+                    <p>One-time payment</p>
+                    <div class="price">Rs. 5,000</div>
+                    <ul style="list-style: none; text-align: left; margin-top: 20px;">
+                        <li><i class="fas fa-check" style="color:green"></i> Complete Design</li>
+                        <li><i class="fas fa-check" style="color:green"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check" style="color:green"></i> Fast Loading</li>
+                    </ul>
+                </div>
+
+                <!-- Domain Cost -->
+                <div class="price-card">
+                    <h3>Domain Name</h3>
+                    <p>Yearly Charge</p>
+                    <div class="price">Rs. 3,700 <small>to 5,000</small></div>
+                    <p>.lk or .com domains available.</p>
+                    <p style="margin-top:10px; font-size:0.9rem; color:#64748b;">(Price depends on extension)</p>
+                </div>
+
+                <!-- Hosting Cost -->
+                <div class="price-card">
+                    <h3>Web Hosting</h3>
+                    <p>Monthly Charge</p>
+                    <div class="price">Rs. 350 <small>/mo</small></div>
+                    <p>Reliable hosting services.</p>
+                    <p style="margin-top:10px; font-size:0.9rem; color:#64748b;">(Keeps your site online 24/7)</p>
+                </div>
+
+            </div>
+        </div>
     </section>
 
+    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
-      <h2 style="margin-bottom:10px">Recent projects</h2>
-      <div class="grid">
-        <div class="card"><a href="https://colombagesahan.github.io/newdimuthu/" target="_blank"> <div class="title">New Dimuthu</div><div style="color:var(--muted);font-size:13px">Complete single-page site</div></a></div>
-        <div class="card"><a href="https://colombagesahan.github.io/trb-construction/" target="_blank"> <div class="title">TRB Construction</div><div style="color:var(--muted);font-size:13px">Contractor website</div></a></div>
-        <div class="card"><a href="https://colombagesahan.github.io/Trandy-Construction/" target="_blank"> <div class="title">Trandy Construction</div><div style="color:var(--muted);font-size:13px">Services & contact</div></a></div>
+        <div class="container">
+            <h2 class="section-title">My Ongoing Projects</h2>
+            <div class="portfolio-grid">
 
-        <div class="card"><a href="https://colombagesahan.github.io/D-D-CONSTRUCTIONS/" target="_blank"> <div class="title">D-D Constructions</div><div style="color:var(--muted);font-size:13px">Local builder site</div></a></div>
-        <div class="card"><a href="https://colombagesahan.github.io/Rockhill/" target="_blank"> <div class="title">Rockhill</div><div style="color:var(--muted);font-size:13px">Project showcase</div></a></div>
-        <div class="card"><a href="https://colombagesahan.github.io/Nawarathna-Cool-Engineering/" target="_blank"> <div class="title">Nawarathna Cool Eng.</div><div style="color:var(--muted);font-size:13px">Business listing site</div></a></div>
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-preview" style="background: #3498db;"><i class="fas fa-building"></i></div>
+                    <div class="project-info">
+                        <h3>New Dimuthu</h3>
+                        <a href="https://colombagesahan.github.io/newdimuthu/" target="_blank" class="btn-visit">Visit Site</a>
+                    </div>
+                </div>
 
-        <div class="card"><a href="https://colombagesahan.github.io/Sri-Siripathi/" target="_blank"> <div class="title">Sri Siripathi</div><div style="color:var(--muted);font-size:13px">Local services</div></a></div>
-        <div class="card"><a href="https://colombagesahan.github.io/CRAFT-MADE/" target="_blank"> <div class="title">CRAFT MADE</div><div style="color:var(--muted);font-size:13px">Shopfront</div></a></div>
-        <div class="card"><a href="https://colombagesahan.github.io/SAMEERA-FURNITURE/" target="_blank"> <div class="title">Sameera Furniture</div><div style="color:var(--muted);font-size:13px">Furniture catalog</div></a></div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-preview" style="background: #e67e22;"><i class="fas fa-hard-hat"></i></div>
+                    <div class="project-info">
+                        <h3>TRB Construction</h3>
+                        <a href="https://colombagesahan.github.io/trb-construction/" target="_blank" class="btn-visit">Visit Site</a>
+                    </div>
+                </div>
 
-        <div class="card"><a href="https://colombagesahan.github.io/excellent-granite/" target="_blank"> <div class="title">Excellent Granite</div><div style="color:var(--muted);font-size:13px">Material & products</div></a></div>
-      </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-preview" style="background: #2ecc71;"><i class="fas fa-drafting-compass"></i></div>
+                    <div class="project-info">
+                        <h3>Trandy Construction</h3>
+                        <a href="https://colombagesahan.github.io/Trandy-Construction/" target="_blank" class="btn-visit">Visit Site</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-preview" style="background: #9b59b6;"><i class="fas fa-city"></i></div>
+                    <div class="project-info">
+                        <h3>D & D Constructions</h3>
+                        <a href="https://colombagesahan.github.io/D-D-CONSTRUCTIONS/" target="_blank" class="btn-visit">Visit Site</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-preview" style="background: #34495e;"><i class="fas fa-home"></i></div>
+                    <div class="project-info">
+                        <h3>Rockhill</h3>
+                        <a href="https://colombagesahan.github.io/Rockhill/" target="_blank" class="btn-visit">Visit Site</a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-preview" style="background: #1abc9c;"><i class="fas fa-snowflake"></i></div>
+                    <div class="project-info">
+                        <h3>Nawarathna Cool Engineering</h3>
+                        <a href="https://colombagesahan.github.io/Nawarathna-Cool-Engineering/" target="_blank" class="btn-visit">Visit Site</a>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card">
+                    <div class="project-preview" style="background: #e74c3c;"><i class="fas fa-layer-group"></i></div>
+                    <div class="project-info">
+                        <h3>Sri Siripathi</h3>
+                        <a href="https://colombagesahan.github.io/Sri-Siripathi/" target="_blank" class="btn-visit">Visit Site</a>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card">
+                    <div class="project-preview" style="background: #f1c40f;"><i class="fas fa-couch"></i></div>
+                    <div class="project-info">
+                        <h3>Sameera Furniture</h3>
+                        <a href="https://colombagesahan.github.io/SAMEERA-FURNITURE/" target="_blank" class="btn-visit">Visit Site</a>
+                    </div>
+                </div>
+
+                 <!-- Project 9 -->
+                 <div class="project-card">
+                    <div class="project-preview" style="background: #5D6D7E;"><i class="fas fa-gem"></i></div>
+                    <div class="project-info">
+                        <h3>Excellent Granite</h3>
+                        <a href="https://colombagesahan.github.io/excellent-granite/" target="_blank" class="btn-visit">Visit Site</a>
+                    </div>
+                </div>
+                 <!-- Project 10 -->
+                 <div class="project-card">
+                    <div class="project-preview" style="background: #D35400;"><i class="fas fa-tools"></i></div>
+                    <div class="project-info">
+                        <h3>Craft Made</h3>
+                        <a href="https://colombagesahan.github.io/CRAFT-MADE/" target="_blank" class="btn-visit">Visit Site</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
-    <section id="pricing" style="margin-top:26px">
-      <h2>Pricing</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px">
-        <div class="card">
-          <div style="font-weight:800;font-size:18px">Standard package</div>
-          <div style="margin-top:8px">Full single-page website — LKR 5,000 (one-time)</div>
-          <ul style="color:var(--muted);margin-top:8px;padding-left:18px">
-            <li>Responsive (mobile + desktop)</li>
-            <li>WhatsApp & phone call buttons</li>
-            <li>Portfolio & contact sections</li>
-            <li>1 round of small edits after delivery</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div style="font-weight:800;font-size:18px">Extras & hosting</div>
-          <div style="margin-top:8px;color:var(--muted)">Domain: LKR 3,700–5,000 / year<br>Hosting: LKR 350 / month<br>Optional: Maintenance & updates — contact for quote</div>
-        </div>
-      </div>
-    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container contact-container">
+            
+            <div class="contact-info">
+                <h2>Get Started Today</h2>
+                <p style="margin-bottom:30px; opacity:0.9;">Ready to take your business online? Give me a call to discuss your project.</p>
+                
+                <div class="contact-item">
+                    <i class="fas fa-user"></i>
+                    <span>Sahan Dilshan Colombage</span>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:0703150742" style="color:white; font-weight:bold; font-size:1.3rem;">070 315 0742</a>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>110, Ranala Road, Habarakada, Homagama</span>
+                </div>
 
-    <section id="contact" style="margin-top:26px">
-      <h2>Contact</h2>
-      <div class="contact-grid" style="margin-top:10px">
-        <div class="card">
-          <div style="font-weight:800">Call or message</div>
-          <div style="margin-top:8px;color:var(--muted)"><a href="tel:0703150742" style="color:inherit;text-decoration:none">070 315 0742</a><br><a href="https://wa.me/94703150742" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">WhatsApp me</a></div>
-        </div>
-        <div class="card">
-          <div style="font-weight:800">Address</div>
-          <div style="margin-top:8px;color:var(--muted)">110, Ranala Road, Habarakada, Homagama</div>
-        </div>
-      </div>
+                <a href="tel:0703150742" class="btn-main" style="margin-top:20px; text-decoration:none; display:inline-block;">Call Now</a>
+            </div>
 
-      <div class="faq" style="margin-top:12px">
-        <div style="font-weight:700">FAQ</div>
-        <div style="color:var(--muted);margin-top:6px">Q: How long to deliver?<br>A: Typical delivery for the single-page site is 2–5 working days depending on content and feedback.</div>
-      </div>
+            <div class="map-box">
+                <!-- Embedded Google Map -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.123456789012!2d80.0!3d6.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDgnMDAuMCJOIDgwwrAwMCcwMC4wIkU!5e0!3m2!1sen!2slk!4v1600000000000!5m2!1sen!2slk" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+        </div>
     </section>
 
     <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-        <div>© <strong>Sahan D. Colombage</strong> — Web development. Phone: <a href="tel:0703150742" style="color:inherit;text-decoration:none">070 315 0742</a></div>
-        <div style="color:var(--muted);font-size:13px">Built with care — Portfolio live examples above</div>
-      </div>
+        <p>&copy; 2024 Sahan Dilshan Colombage. All Rights Reserved.</p>
     </footer>
-  </div>
 
-  <a class="floating" href="https://wa.me/94703150742" target="_blank" rel="noopener">
-    <button class="btn btn-primary" style="border-radius:999px;padding:14px 18px;">💬 WhatsApp</button>
-  </a>
+    <!-- Sticky Mobile Call Bar -->
+    <div class="mobile-cta">
+        <a href="tel:0703150742">
+            <i class="fas fa-phone-volume"></i> CALL NOW: 070 315 0742
+        </a>
+    </div>
 
-  <script>
-    // Send quick quote to WhatsApp with form data
-    document.getElementById('quoteForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      var name = encodeURIComponent(document.getElementById('name').value || '');
-      var phone = encodeURIComponent(document.getElementById('phone').value || '');
-      var msg = encodeURIComponent(document.getElementById('message').value || '');
-      var text = 'Hello Sahan, I need a website. Name: '+name+' | Contact: '+phone+' | Details: '+msg;
-      // open WhatsApp (international number +94 703150742)
-      var wa = 'https://wa.me/94703150742?text=' + text;
-      window.open(wa, '_blank');
-    });
-  </script>
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
