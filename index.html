@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sahan Colombage — Web Developer | Build, Launch, Grow</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Professional web development by Sahan Dilshan Colombage — Single-page websites, small businesses, portfolio sites. Price from LKR 5,000. Contact: 070 315 0742" />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.03);font-family:Inter,system-ui,Arial,Segoe UI,sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071025 0%, #071c2b 100%);color:#e6eef6;line-height:1.45}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0ea5a3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#021322}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 370px;gap:28px;align-items:center;margin-top:18px}
+    .hero-card{background:var(--glass);padding:28px;border-radius:16px;backdrop-filter: blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    h1{font-size:28px;margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 16px}
+    .ctas{display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#0891b2);color:#031016}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .price{font-size:22px;font-weight:800;color:var(--accent)}
+    .features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+    .feature{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
+    .portfolio{margin-top:28px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .card{background:var(--card);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .card a{color:inherit;text-decoration:none}
+    .card .title{font-weight:700;margin:8px 0 4px}
+    footer{margin-top:36px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:700}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .faq{margin-top:18px}
+    @media (max-width:880px){.hero{grid-template-columns:1fr;}.grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}}
+    @media (max-width:520px){.grid{grid-template-columns:1fr}.brand span{display:none}.logo{width:44px;height:44px}}
+    /* sticky call button */
+    .floating{position:fixed;right:18px;bottom:18px;border-radius:999px;box-shadow:0 10px 30px rgba(2,6,23,0.5);z-index:40}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SD</div>
+        <div>
+          <div style="font-weight:800">Sahan Colombage</div>
+          <div style="font-size:13px;color:var(--muted)">Web developer — Homagama, Sri Lanka</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Professional single-page websites that get you customers</h1>
+        <p class="lead">I build fast, responsive websites for small businesses, contractors, shops and portfolios. Clear prices — reliable delivery — phone & WhatsApp support.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="tel:0703150742">📞 Call: 070 315 0742</a>
+          <a class="btn btn-ghost" href="https://wa.me/94703150742" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:16px;align-items:center">
+          <div>
+            <div class="price">LKR 5,000</div>
+            <div style="color:var(--muted);font-weight:600;font-size:13px">Full website — one page (HTML/CSS/JS)</div>
+          </div>
+          <div style="margin-left:auto;text-align:right;color:var(--muted);font-size:13px">
+            <div>Domains: LKR 3,700–5,000 / year</div>
+            <div>Hosting: LKR 350 / month</div>
+          </div>
+        </div>
+
+        <div class="features">
+          <div class="feature">✅ Responsive for mobile & desktop</div>
+          <div class="feature">✅ WhatsApp & phone call CTA</div>
+          <div class="feature">✅ Portfolio & reviews section</div>
+          <div class="feature">✅ Fast delivery & support</div>
+        </div>
+      </div>
+
+      <aside style="padding:18px 0">
+        <div style="background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px">
+          <div style="font-weight:800">Quick quote</div>
+          <div style="color:var(--muted);font-size:13px;margin-top:8px">Tell me what you need and I will call or message you to confirm.</div>
+
+          <form id="quoteForm" style="margin-top:12px;display:grid;gap:8px">
+            <input id="name" required placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            <input id="phone" required placeholder="Phone or WhatsApp" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            <textarea id="message" placeholder="Short message (e.g. I need a website for my shop)" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;resize:vertical"></textarea>
+            <button type="submit" class="btn btn-primary">Send via WhatsApp</button>
+          </form>
+        </div>
+
+        <div style="margin-top:12px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px">
+          <div style="font-weight:700">Address</div>
+          <div style="color:var(--muted);font-size:13px">110, Ranala Road, Habarakada, Homagama</div>
+          <div style="margin-top:8px">📞 <a href="tel:0703150742" style="color:inherit;text-decoration:none">070 315 0742</a></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="services" style="margin-top:26px">
+      <h2 style="margin:0 0 10px">Services</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div class="card"><div style="font-weight:700">Landing & Business Sites</div><div style="color:var(--muted);font-size:13px;margin-top:6px">One-page sites, contact & WhatsApp CTAs</div></div>
+        <div class="card"><div style="font-weight:700">Portfolio Sites</div><div style="color:var(--muted);font-size:13px;margin-top:6px">Showcase your work, easy updates</div></div>
+        <div class="card"><div style="font-weight:700">Shopfront & WhatsApp Orders</div><div style="color:var(--muted);font-size:13px;margin-top:6px">Simple catalog + WhatsApp checkout</div></div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <h2 style="margin-bottom:10px">Recent projects</h2>
+      <div class="grid">
+        <div class="card"><a href="https://colombagesahan.github.io/newdimuthu/" target="_blank"> <div class="title">New Dimuthu</div><div style="color:var(--muted);font-size:13px">Complete single-page site</div></a></div>
+        <div class="card"><a href="https://colombagesahan.github.io/trb-construction/" target="_blank"> <div class="title">TRB Construction</div><div style="color:var(--muted);font-size:13px">Contractor website</div></a></div>
+        <div class="card"><a href="https://colombagesahan.github.io/Trandy-Construction/" target="_blank"> <div class="title">Trandy Construction</div><div style="color:var(--muted);font-size:13px">Services & contact</div></a></div>
+
+        <div class="card"><a href="https://colombagesahan.github.io/D-D-CONSTRUCTIONS/" target="_blank"> <div class="title">D-D Constructions</div><div style="color:var(--muted);font-size:13px">Local builder site</div></a></div>
+        <div class="card"><a href="https://colombagesahan.github.io/Rockhill/" target="_blank"> <div class="title">Rockhill</div><div style="color:var(--muted);font-size:13px">Project showcase</div></a></div>
+        <div class="card"><a href="https://colombagesahan.github.io/Nawarathna-Cool-Engineering/" target="_blank"> <div class="title">Nawarathna Cool Eng.</div><div style="color:var(--muted);font-size:13px">Business listing site</div></a></div>
+
+        <div class="card"><a href="https://colombagesahan.github.io/Sri-Siripathi/" target="_blank"> <div class="title">Sri Siripathi</div><div style="color:var(--muted);font-size:13px">Local services</div></a></div>
+        <div class="card"><a href="https://colombagesahan.github.io/CRAFT-MADE/" target="_blank"> <div class="title">CRAFT MADE</div><div style="color:var(--muted);font-size:13px">Shopfront</div></a></div>
+        <div class="card"><a href="https://colombagesahan.github.io/SAMEERA-FURNITURE/" target="_blank"> <div class="title">Sameera Furniture</div><div style="color:var(--muted);font-size:13px">Furniture catalog</div></a></div>
+
+        <div class="card"><a href="https://colombagesahan.github.io/excellent-granite/" target="_blank"> <div class="title">Excellent Granite</div><div style="color:var(--muted);font-size:13px">Material & products</div></a></div>
+      </div>
+    </section>
+
+    <section id="pricing" style="margin-top:26px">
+      <h2>Pricing</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px">
+        <div class="card">
+          <div style="font-weight:800;font-size:18px">Standard package</div>
+          <div style="margin-top:8px">Full single-page website — LKR 5,000 (one-time)</div>
+          <ul style="color:var(--muted);margin-top:8px;padding-left:18px">
+            <li>Responsive (mobile + desktop)</li>
+            <li>WhatsApp & phone call buttons</li>
+            <li>Portfolio & contact sections</li>
+            <li>1 round of small edits after delivery</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div style="font-weight:800;font-size:18px">Extras & hosting</div>
+          <div style="margin-top:8px;color:var(--muted)">Domain: LKR 3,700–5,000 / year<br>Hosting: LKR 350 / month<br>Optional: Maintenance & updates — contact for quote</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:26px">
+      <h2>Contact</h2>
+      <div class="contact-grid" style="margin-top:10px">
+        <div class="card">
+          <div style="font-weight:800">Call or message</div>
+          <div style="margin-top:8px;color:var(--muted)"><a href="tel:0703150742" style="color:inherit;text-decoration:none">070 315 0742</a><br><a href="https://wa.me/94703150742" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">WhatsApp me</a></div>
+        </div>
+        <div class="card">
+          <div style="font-weight:800">Address</div>
+          <div style="margin-top:8px;color:var(--muted)">110, Ranala Road, Habarakada, Homagama</div>
+        </div>
+      </div>
+
+      <div class="faq" style="margin-top:12px">
+        <div style="font-weight:700">FAQ</div>
+        <div style="color:var(--muted);margin-top:6px">Q: How long to deliver?<br>A: Typical delivery for the single-page site is 2–5 working days depending on content and feedback.</div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div>© <strong>Sahan D. Colombage</strong> — Web development. Phone: <a href="tel:0703150742" style="color:inherit;text-decoration:none">070 315 0742</a></div>
+        <div style="color:var(--muted);font-size:13px">Built with care — Portfolio live examples above</div>
+      </div>
+    </footer>
+  </div>
+
+  <a class="floating" href="https://wa.me/94703150742" target="_blank" rel="noopener">
+    <button class="btn btn-primary" style="border-radius:999px;padding:14px 18px;">💬 WhatsApp</button>
+  </a>
+
+  <script>
+    // Send quick quote to WhatsApp with form data
+    document.getElementById('quoteForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = encodeURIComponent(document.getElementById('name').value || '');
+      var phone = encodeURIComponent(document.getElementById('phone').value || '');
+      var msg = encodeURIComponent(document.getElementById('message').value || '');
+      var text = 'Hello Sahan, I need a website. Name: '+name+' | Contact: '+phone+' | Details: '+msg;
+      // open WhatsApp (international number +94 703150742)
+      var wa = 'https://wa.me/94703150742?text=' + text;
+      window.open(wa, '_blank');
+    });
+  </script>
+</body>
+</html>
